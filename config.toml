@@ -1,0 +1,56 @@
+# SimpleWeb Configuration File
+
+[app]
+name = "SimpleWeb"
+description = "A clean, modern web page template built with best practices"
+version = "1.0.0"
+
+[server]
+host = "0.0.0.0"
+port = 8000
+workers = 4
+reload = true  # Auto-reload on code changes (development only)
+
+[logging]
+level = "info"  # debug, info, warning, error, critical
+format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+file = "app.log"
+max_size = 10485760  # 10MB
+backup_count = 5
+
+[security]
+# These settings should be overridden by environment variables in production
+enable_cors = true
+allowed_origins = ["http://localhost:8000", "http://127.0.0.1:8000"]
+allowed_methods = ["GET", "POST", "OPTIONS"]
+allowed_headers = ["*"]
+
+[templates]
+directory = "templates"
+auto_reload = true  # Reload templates on change (development only)
+
+[static]
+directory = "static"
+url_path = "/static"
+
+[features]
+contact_form = true
+animations = true
+responsive_design = true
+
+[meta]
+author = "SimpleWeb Team"
+keywords = "web, template, responsive, modern, clean"
+og_image = "/static/images/og-image.jpg"
+twitter_card = "summary_large_image"
+
+[contact]
+email = "contact@example.com"
+phone = "+1 (555) 123-4567"
+address = "123 Web Street, Internet City, 12345"
+social = [
+    {platform = "twitter", url = "https://twitter.com/example"},
+    {platform = "facebook", url = "https://facebook.com/example"},
+    {platform = "instagram", url = "https://instagram.com/example"},
+    {platform = "github", url = "https://github.com/example"}
+]
